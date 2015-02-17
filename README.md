@@ -67,3 +67,19 @@ Tools used
         $ curl --request POST 'localhost:8080/ipcoord?skey=qoWRzl0hBKFdQE9yjMOv73Xm254iwx&name=machine&ip=100.0.0.0'
         $ 0
 
+- __Machine deletion__ is performed by a DELETE request
+
+- __Machine retrieval__ is performed by a GET request following the format
+
+        ipcoord?_parameters_
+
+    where the mandatory parameter is
+
+    - _skey_: the key received by the user for the service
+
+    and the optional parameters are
+
+    - _delay_: amount of time (in minutes) since the IP was last updated (default 5min). Machines that were updated older that _delay_ will not be retrieved
+    - json: this parameter is not used with '='. If present, the list of machines is in JSON format (default is TAB separated)
+
+    The default output is a list machines and their respective IPs: `name\tip\n`. If the _json_ parameter is used, then a JSON formated list is returned.
