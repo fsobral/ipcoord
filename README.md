@@ -41,7 +41,7 @@ Tools used
         $ curl --request GET 'localhost:8080/ipcoord/keygen?email=myemail@email.com'
         $ iJ2xzSaF_TlI7s5kHynvudAVeEfhXU
 
-- <A NAME='insertion'>__Machine insertion__</A> is performed by a PUT request following the format:
+- <A NAME='insertion'></A>__Machine insertion__ is performed by a PUT request following the format:
 
         ipcoord?_parameters_
 
@@ -56,10 +56,14 @@ Tools used
         $ curl --request PUT 'localhost:8080/ipcoord?skey=qoWRzl0hBKFdQE9yjMOv73Xm254iwx&name=machine&ip=100.0.0.0'
         $ 0
 
-    __Note__: the PUT request works only to the machine insertion for the first time. For insertion/update, see the POST request.
+    __Note__: the PUT request works only to the machine insertion for the first time. For insertion/update, see the [POST request](#post).
 
-- __Machine insertion/update__ is performed by a POST request following the format:
+- <A NAME='post'></A>__Machine insertion/update__ is performed by a POST request following the format:
 
         ipcoord?_parameters_
 
-    where the mandatory parameters are the same of the [insertion](#insertion)
+    where the mandatory parameters are the same of the [insertion](#insertion) request. As an example, we have
+
+        $ curl --request POST 'localhost:8080/ipcoord?skey=qoWRzl0hBKFdQE9yjMOv73Xm254iwx&name=machine&ip=100.0.0.0'
+        $ 0
+
